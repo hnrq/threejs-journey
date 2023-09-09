@@ -14,6 +14,9 @@ dependencies:
   astro:
     specifier: ^3.0.12
     version: 3.0.12(sass@1.66.1)
+  lil-gui:
+    specifier: ^0.18.2
+    version: 0.18.2
   sass:
     specifier: ^1.66.1
     version: 1.66.1
@@ -1836,6 +1839,10 @@ packages:
   /kleur@4.1.5:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
+    dev: false
+
+  /lil-gui@0.18.2:
+    resolution: {integrity: sha512-DgdrLy3/KGC0PiQLKgOcJMPItP4xY4iWgJ9+91Zaxfr8GCTmMps05QS9w9jW7yspILlbscbquwjOwxmWnSx5Uw==}
     dev: false
 
   /load-yaml-file@0.2.0:
