@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.0.12"
+    "@fontsource/b612-mono": "^5.0.11",
+    "anime": "^0.1.2",
+    "astro": "^3.0.12",
+    "sass": "^1.66.1"
   }
 }
