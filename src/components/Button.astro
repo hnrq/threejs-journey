@@ -1,0 +1,21 @@
+<button><slot /></button>
+
+<style lang="scss">
+  button {
+    background-color: transparent;
+    color: white;
+    text-transform: uppercase;
+    padding: calc(var(--base-spacing) * 1.5) calc(var(--base-spacing) * 3);
+    transition-duration: 0.3s;
+    border: 2px solid white;
+    transition-property: color, background-color;
+    font-weight: bold;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      color: black;
+      background: white;
+    }
+  }
+</style>
