@@ -14,12 +14,28 @@ import Layout from "@layouts/Layout.astro";
 
   // Sizes
   const sizes = {
-    width: 800,
-    height: 600,
+    width: window.innerWidth,
+    height: window.innerHeight,
   };
 
   // Scene
   const scene = new THREE.Scene();
+
+  window.addEventListener("resize", () => {
+    sizes.width = window.innerWidth;
+    sizes.height = window.innerHeight;
+
+    camera.aspect = sizes.width / sizes.height;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(sizes.width, sizes.height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  });
+
+  window.addEventListener("dblclick", () => {
+    if (!document.fullscreenElement) canvas.requestFullscreen();
+    else document.exitFullscreen();
+  });
 
   // Object
   const mesh = new THREE.Mesh(
@@ -66,6 +82,23 @@ import Layout from "@layouts/Layout.astro";
   tick();
 </script>
 
-<Layout title="07 - Cameras">
+<Layout title="08 - Fullscreen and resizing">
   <canvas class="webgl"></canvas>
 </Layout>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  html,
+  body {
+    overflow: hidden;
+  }
+  .webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+  }
+</style>
