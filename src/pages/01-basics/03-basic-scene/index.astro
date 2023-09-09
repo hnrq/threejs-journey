@@ -6,7 +6,7 @@ import Layout from "@layouts/Layout.astro";
   import * as THREE from "three";
 
   // Canvas
-  const canvas = document.querySelector("canvas.webgl");
+  const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
 
   // Sizes
   const sizes = {
@@ -31,9 +31,7 @@ import Layout from "@layouts/Layout.astro";
   scene.add(camera);
 
   // Renderer
-  const renderer = new THREE.WebGLRenderer({
-    canvas: canvas,
-  });
+  const renderer = new THREE.WebGLRenderer({ canvas });
   renderer.setSize(sizes.width, sizes.height);
   renderer.render(scene, camera);
 </script>
