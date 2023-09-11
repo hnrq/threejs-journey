@@ -1,0 +1,142 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<script>
+  import * as THREE from "three";
+  import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+  import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
+  import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
+
+  THREE.ColorManagement.enabled = false;
+
+  /**
+   * Base
+   */
+  // Canvas
+  const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
+
+  // Scene
+  const scene = new THREE.Scene();
+
+  /**
+   * Sizes
+   */
+  const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
+
+  window.addEventListener("resize", () => {
+    // Update sizes
+    sizes.width = window.innerWidth;
+    sizes.height = window.innerHeight;
+
+    // Update camera
+    camera.aspect = sizes.width / sizes.height;
+    camera.updateProjectionMatrix();
+
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  });
+
+  /**
+   * Camera
+   */
+  // Base camera
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    sizes.width / sizes.height,
+    0.1,
+    100
+  );
+  camera.position.set(1, 1, 2);
+  scene.add(camera);
+
+  // Controls
+  const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = true;
+
+  /**
+   * Renderer
+   */
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+  });
+  renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+  renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  /**
+   * Fonts
+   */
+  const fontLoader = new FontLoader();
+  fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
+    const textGeometry = new TextGeometry("HELLO!", {
+      font: font,
+      size: 0.5,
+      height: 0.2,
+      curveSegments: 12,
+      bevelEnabled: true,
+      bevelThickness: 0.03,
+      bevelSize: 0.02,
+      bevelOffset: 0,
+      bevelSegments: 5,
+    });
+    textGeometry.center();
+
+    const textMaterial = new THREE.MeshNormalMaterial();
+    const text = new THREE.Mesh(textGeometry, textMaterial);
+    scene.add(text);
+
+    const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45);
+    for (let i = 0; i < 100; i++) {
+      const donut = new THREE.Mesh(donutGeometry, textMaterial);
+      donut.position.set(
+        (Math.random() - 0.5) * 10,
+        (Math.random() - 0.5) * 10,
+        (Math.random() - 0.5) * 10
+      );
+      donut.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
+      const scale = Math.random();
+      donut.scale.set(scale, scale, scale);
+
+      scene.add(donut);
+    }
+  });
+
+  /**
+   * Animate
+   */
+  const tick = () => {
+    controls.update();
+    renderer.render(scene, camera);
+    window.requestAnimationFrame(tick);
+  };
+
+  tick();
+</script>
+
+<Layout title="12 - Materials">
+  <canvas class="webgl"></canvas>
+</Layout>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body {
+    overflow: hidden;
+  }
+
+  .webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+  }
+</style>
