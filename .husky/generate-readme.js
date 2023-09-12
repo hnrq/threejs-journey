@@ -3,7 +3,7 @@ import { writeFileSync } from 'fs';
 import path from 'path';
 
 const formatDirNames = (name) =>
-  `${name.charAt(3).toUpperCase()}${name.substring(4)}`.replace('-', ' ');
+  `${name.substring(0, 2)} - ${name.charAt(3).toUpperCase()}${name.substring(4).replace('-', ' ')}`;
 
 const lessons = (
   await Promise.all(
@@ -18,13 +18,11 @@ const lessons = (
           .filter((dirent) => dirent.isDirectory())
           .reduce(
             (acc, { name }) =>
-              `${acc}\t<li><a href="src/page/${dirent.name}/${name}">${formatDirNames(
-                name,
-              )}</a></li>\n`,
+              `${acc} - [${formatDirNames(name)}](src/page/${dirent.name}/${name})\n`,
             '',
           );
 
-        return `### ${formatDirNames(dirent.name)}\n<ol>\n${lessons}</ol>`;
+        return `### ${formatDirNames(dirent.name)}\n${lessons}`;
       }),
   )
 ).join('\n\n');
