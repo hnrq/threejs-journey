@@ -17,7 +17,7 @@ import Layout from '@layouts/Layout.astro';
   const gradientTexture = textureLoader.load(
     (
       await getImage({
-        src: (await import('./textures/gradients/3.jpg')).default,
+        src: (await import('@assets/textures/gradients/3.jpg')).default,
         format: 'jpg',
       })
     ).src,

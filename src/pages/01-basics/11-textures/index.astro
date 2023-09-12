@@ -16,7 +16,7 @@ import Layout from '@layouts/Layout.astro';
   const colorTexture = textureLoader.load(
     (
       await getImage({
-        src: (await import('./textures/minecraft.png')).default,
+        src: (await import('@assets/textures/minecraft.png')).default,
         format: 'png',
       })
     ).src,
