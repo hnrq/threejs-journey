@@ -1,12 +1,12 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from '@layouts/Layout.astro';
 ---
 
 <script>
-  import * as THREE from "three";
-  import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-  import * as dat from "lil-gui";
-  import { getImage } from "astro:assets";
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+  import * as dat from 'lil-gui';
+  import { getImage } from 'astro:assets';
 
   THREE.ColorManagement.enabled = false;
 
@@ -17,17 +17,17 @@ import Layout from "@layouts/Layout.astro";
   const gradientTexture = textureLoader.load(
     (
       await getImage({
-        src: (await import("./textures/gradients/3.jpg")).default,
-        format: "jpg",
+        src: (await import('./textures/gradients/3.jpg')).default,
+        format: 'jpg',
       })
-    ).src
+    ).src,
   );
 
   /**
    * Base
    */
   // Canvas
-  const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
+  const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
 
   // Scene
   const scene = new THREE.Scene();
@@ -40,7 +40,7 @@ import Layout from "@layouts/Layout.astro";
     height: window.innerHeight,
   };
 
-  window.addEventListener("resize", () => {
+  window.addEventListener('resize', () => {
     // Update sizes
     sizes.width = window.innerWidth;
     sizes.height = window.innerHeight;
@@ -58,12 +58,7 @@ import Layout from "@layouts/Layout.astro";
    * Camera
    */
   // Base camera
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    sizes.width / sizes.height,
-    0.1,
-    100
-  );
+  const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
   camera.position.x = 1;
   camera.position.y = 1;
   camera.position.z = 2;
@@ -103,16 +98,10 @@ import Layout from "@layouts/Layout.astro";
   gradientTexture.magFilter = THREE.NearestFilter;
   gradientTexture.generateMipmaps = false;
 
-  const sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(0.5, 16, 16),
-    material
-  );
+  const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), material);
   sphere.position.x = -1.5;
   const plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);
-  const torus = new THREE.Mesh(
-    new THREE.TorusGeometry(0.3, 0.2, 16, 32),
-    material
-  );
+  const torus = new THREE.Mesh(new THREE.TorusGeometry(0.3, 0.2, 16, 32), material);
   torus.position.x = 1.5;
 
   scene.add(sphere, plane, torus);
@@ -122,7 +111,7 @@ import Layout from "@layouts/Layout.astro";
    */
 
   const gui = new dat.GUI();
-  gui.addColor(material, "color");
+  gui.addColor(material, 'color');
 
   /**
    * Animate

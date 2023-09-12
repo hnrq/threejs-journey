@@ -1,13 +1,13 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from '@layouts/Layout.astro';
 ---
 
 <script>
-  import * as THREE from "three";
-  import anime from "animejs";
+  import * as THREE from 'three';
+  import anime from 'animejs';
 
   // Canvas
-  const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
+  const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
 
   // Sizes
   const sizes = {
@@ -21,7 +21,7 @@ import Layout from "@layouts/Layout.astro";
   // Object
   const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
   const cubeMaterial = new THREE.MeshBasicMaterial({
-    color: "#ff0000",
+    color: '#ff0000',
   });
   const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
   scene.add(cubeMesh);
@@ -37,7 +37,7 @@ import Layout from "@layouts/Layout.astro";
 
   anime({
     duration: 4000,
-    easing: "linear",
+    easing: 'linear',
     targets: [cubeMesh.position, cubeMesh.rotation],
     x: [1, -1, 0],
     loop: true,

@@ -1,16 +1,16 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from '@layouts/Layout.astro';
 ---
 
 <script>
-  import * as THREE from "three";
-  import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
   /**
    * Base
    */
   // Canvas
-  const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
+  const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
 
   // Sizes
   const sizes = {
@@ -21,7 +21,7 @@ import Layout from "@layouts/Layout.astro";
   // Scene
   const scene = new THREE.Scene();
 
-  window.addEventListener("resize", () => {
+  window.addEventListener('resize', () => {
     sizes.width = window.innerWidth;
     sizes.height = window.innerHeight;
 
@@ -32,7 +32,7 @@ import Layout from "@layouts/Layout.astro";
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   });
 
-  window.addEventListener("dblclick", () => {
+  window.addEventListener('dblclick', () => {
     if (!document.fullscreenElement) canvas.requestFullscreen();
     else document.exitFullscreen();
   });
@@ -40,17 +40,12 @@ import Layout from "@layouts/Layout.astro";
   // Object
   const mesh = new THREE.Mesh(
     new THREE.BoxGeometry(1, 1, 1, 5, 5, 5),
-    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+    new THREE.MeshBasicMaterial({ color: 0xff0000 }),
   );
   scene.add(mesh);
 
   // Camera
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    sizes.width / sizes.height,
-    1,
-    100
-  );
+  const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 100);
   camera.position.x = 2;
   camera.position.y = 2;
   camera.position.z = 2;

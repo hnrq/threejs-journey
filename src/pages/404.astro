@@ -1,6 +1,6 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Button from "@components/Button.astro";
+import Layout from '@layouts/Layout.astro';
+import Button from '@components/Button.astro';
 ---
 
 <script>
@@ -8,7 +8,7 @@ import Button from "@components/Button.astro";
 
   let width: number;
   let height: number;
-  const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+  const canvas = document.getElementById('canvas') as HTMLCanvasElement;
   let previousTime: number;
 
   interface Star {
@@ -17,11 +17,8 @@ import Button from "@components/Button.astro";
     z: number;
   }
 
-  export const clear = (
-    context: CanvasRenderingContext2D | null,
-    canvas: HTMLCanvasElement
-  ) => {
-    if (context) context.fillStyle = "#04000d";
+  export const clear = (context: CanvasRenderingContext2D | null, canvas: HTMLCanvasElement) => {
+    if (context) context.fillStyle = '#04000d';
     context?.fillRect(0, 0, canvas.width, canvas.height);
   };
 
@@ -29,11 +26,10 @@ import Button from "@components/Button.astro";
     context: CanvasRenderingContext2D | null,
     x: number,
     y: number,
-    brightness: number
+    brightness: number,
   ) => {
     const intensity = brightness * 255;
-    if (context)
-      context.fillStyle = `rgb(${intensity}, ${intensity}, ${intensity})`;
+    if (context) context.fillStyle = `rgb(${intensity}, ${intensity}, ${intensity})`;
     context?.fillRect(x, y, 2, 2);
   };
 
@@ -58,11 +54,11 @@ import Button from "@components/Button.astro";
 
   setCanvasExtents();
 
-  addEventListener("resize", () => {
+  addEventListener('resize', () => {
     setCanvasExtents();
   });
 
-  const context = canvas.getContext("2d");
+  const context = canvas.getContext('2d');
 
   const tick = (time: number) => {
     let elapsed = time - previousTime;
@@ -103,8 +99,7 @@ import Button from "@components/Button.astro";
     <canvas id="canvas" class="starfield"></canvas>
     <div class="content">
       <h2 class="subheading subheading--mono">
-        Error 404. Simulation disengaged. Critical cube disruption. Course
-        correcting...
+        Error 404. Simulation disengaged. Critical cube disruption. Course correcting...
       </h2>
       <div class="button__container">
         <a href="/">

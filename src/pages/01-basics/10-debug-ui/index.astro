@@ -1,18 +1,18 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from '@layouts/Layout.astro';
 ---
 
 <script>
-  import * as THREE from "three";
-  import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-  import * as dat from "lil-gui";
-  import anime from "animejs";
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+  import * as dat from 'lil-gui';
+  import anime from 'animejs';
 
   /**
    * Base
    */
   // Canvas
-  const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
+  const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
 
   // Sizes
   const sizes = {
@@ -23,7 +23,7 @@ import Layout from "@layouts/Layout.astro";
   // Scene
   const scene = new THREE.Scene();
 
-  window.addEventListener("resize", () => {
+  window.addEventListener('resize', () => {
     sizes.width = window.innerWidth;
     sizes.height = window.innerHeight;
 
@@ -45,19 +45,11 @@ import Layout from "@layouts/Layout.astro";
 
   // Object
   const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-  const mesh = new THREE.Mesh(
-    new THREE.BoxGeometry(1, 1, 1, 1, 1, 1),
-    material
-  );
+  const mesh = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1, 1, 1, 1), material);
   scene.add(mesh);
 
   // Camera
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    sizes.width / sizes.height,
-    1,
-    100
-  );
+  const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 100);
   camera.position.x = 2;
   camera.position.y = 2;
   camera.position.z = 2;
@@ -79,11 +71,11 @@ import Layout from "@layouts/Layout.astro";
    * Debug
    */
   const gui = new dat.GUI();
-  gui.add(mesh.position, "y", -3, 3, 0.01);
-  gui.add(mesh, "visible");
-  gui.add(material, "wireframe");
-  gui.addColor(material, "color");
-  gui.add(parameters, "spin");
+  gui.add(mesh.position, 'y', -3, 3, 0.01);
+  gui.add(mesh, 'visible');
+  gui.add(material, 'wireframe');
+  gui.addColor(material, 'color');
+  gui.add(parameters, 'spin');
 
   const tick = () => {
     controls.update();

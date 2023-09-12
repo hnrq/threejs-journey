@@ -1,12 +1,12 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Layout from '@layouts/Layout.astro';
 ---
 
 <script>
-  import * as THREE from "three";
-  import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-  import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
-  import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+  import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
+  import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 
   THREE.ColorManagement.enabled = false;
 
@@ -14,7 +14,7 @@ import Layout from "@layouts/Layout.astro";
    * Base
    */
   // Canvas
-  const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
+  const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
 
   // Scene
   const scene = new THREE.Scene();
@@ -27,7 +27,7 @@ import Layout from "@layouts/Layout.astro";
     height: window.innerHeight,
   };
 
-  window.addEventListener("resize", () => {
+  window.addEventListener('resize', () => {
     // Update sizes
     sizes.width = window.innerWidth;
     sizes.height = window.innerHeight;
@@ -45,12 +45,7 @@ import Layout from "@layouts/Layout.astro";
    * Camera
    */
   // Base camera
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    sizes.width / sizes.height,
-    0.1,
-    100
-  );
+  const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
   camera.position.set(1, 1, 2);
   scene.add(camera);
 
@@ -72,8 +67,8 @@ import Layout from "@layouts/Layout.astro";
    * Fonts
    */
   const fontLoader = new FontLoader();
-  fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
-    const textGeometry = new TextGeometry("HELLO!", {
+  fontLoader.load('/fonts/helvetiker_regular.typeface.json', (font) => {
+    const textGeometry = new TextGeometry('HELLO!', {
       font: font,
       size: 0.5,
       height: 0.2,
@@ -96,7 +91,7 @@ import Layout from "@layouts/Layout.astro";
       donut.position.set(
         (Math.random() - 0.5) * 10,
         (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 10
+        (Math.random() - 0.5) * 10,
       );
       donut.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
       const scale = Math.random();
