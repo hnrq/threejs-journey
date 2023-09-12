@@ -5,27 +5,29 @@ import path from 'path';
 const formatDirNames = (name) =>
   `${name.charAt(3).toUpperCase()}${name.substring(4)}`.replace('-', ' ');
 
-const lessons = await Promise.all(
-  (await readdir(path.resolve('src', 'pages'), { withFileTypes: true }))
-    .filter((dirent) => dirent.isDirectory())
-    .map(async (dirent) => {
-      const lessons = (
-        await readdir(path.resolve('src', 'pages', dirent.name), {
-          withFileTypes: true,
-        })
-      )
-        .filter((dirent) => dirent.isDirectory())
-        .reduce(
-          (acc, { name }) =>
-            `${acc}\t<li><a href="src/page/${dirent.name}/${name}">${formatDirNames(
-              name,
-            )}</a></li>\n`,
-          '',
-        );
+const lessons = (
+  await Promise.all(
+    (await readdir(path.resolve('src', 'pages'), { withFileTypes: true }))
+      .filter((dirent) => dirent.isDirectory())
+      .map(async (dirent) => {
+        const lessons = (
+          await readdir(path.resolve('src', 'pages', dirent.name), {
+            withFileTypes: true,
+          })
+        )
+          .filter((dirent) => dirent.isDirectory())
+          .reduce(
+            (acc, { name }) =>
+              `${acc}\t<li><a href="src/page/${dirent.name}/${name}">${formatDirNames(
+                name,
+              )}</a></li>\n`,
+            '',
+          );
 
-      return `### ${formatDirNames(dirent.name)}\n<ol>\n${lessons}</ol>`;
-    }),
-);
+        return `### ${formatDirNames(dirent.name)}\n<ol>\n${lessons}</ol>`;
+      }),
+  )
+).join('\n\n');
 
 const readmeTemplate = `
 ![Header](src/assets/header.png)
