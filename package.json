@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ./**/*.{ts,js,astro}",
+    "format": "prettier --write ./**/*.{client.ts,js,astro}",
     "prepare": "husky install"
   },
   "dependencies": {
