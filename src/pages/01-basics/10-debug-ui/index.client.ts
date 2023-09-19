@@ -1,7 +1,8 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import * as dat from 'lil-gui';
+
 import anime from 'animejs';
+import * as dat from 'lil-gui';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 /**
  * Base
@@ -18,16 +19,10 @@ const sizes = {
 // Scene
 const scene = new THREE.Scene();
 
-window.addEventListener('resize', () => {
-  sizes.width = window.innerWidth;
-  sizes.height = window.innerHeight;
-
-  camera.aspect = sizes.width / sizes.height;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize(sizes.width, sizes.height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-});
+// Object
+const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+const mesh = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1, 1, 1, 1), material);
+scene.add(mesh);
 
 const parameters = {
   spin: () =>
@@ -37,11 +32,6 @@ const parameters = {
       y: mesh.rotation.y + Math.PI * 2,
     }),
 };
-
-// Object
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-const mesh = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1, 1, 1, 1), material);
-scene.add(mesh);
 
 // Camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 100);
@@ -55,8 +45,16 @@ scene.add(camera);
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize(sizes.width, sizes.height);
 
-// Animate
-const clock = new THREE.Clock();
+window.addEventListener('resize', () => {
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
+
+  camera.aspect = sizes.width / sizes.height;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+});
 
 // Controls
 const controls = new OrbitControls(camera, canvas);

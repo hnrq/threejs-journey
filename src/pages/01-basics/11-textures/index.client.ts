@@ -1,6 +1,8 @@
 import * as THREE from 'three';
+
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { getImage } from 'astro:assets';
+
+import minecraftTextureUrl from '@assets/textures/minecraft.png?url';
 
 THREE.ColorManagement.enabled = false;
 
@@ -8,14 +10,7 @@ THREE.ColorManagement.enabled = false;
 const loadingManager = new THREE.LoadingManager();
 
 const textureLoader = new THREE.TextureLoader(loadingManager);
-const colorTexture = textureLoader.load(
-  (
-    await getImage({
-      src: (await import('@assets/textures/minecraft.png')).default,
-      format: 'png',
-    })
-  ).src,
-);
+const colorTexture = textureLoader.load(minecraftTextureUrl);
 colorTexture.generateMipmaps = false;
 colorTexture.magFilter = THREE.NearestFilter;
 /**
@@ -43,20 +38,6 @@ const sizes = {
   height: window.innerHeight,
 };
 
-window.addEventListener('resize', () => {
-  // Update sizes
-  sizes.width = window.innerWidth;
-  sizes.height = window.innerHeight;
-
-  // Update camera
-  camera.aspect = sizes.width / sizes.height;
-  camera.updateProjectionMatrix();
-
-  // Update renderer
-  renderer.setSize(sizes.width, sizes.height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-});
-
 /**
  * Camera
  */
@@ -80,6 +61,20 @@ const renderer = new THREE.WebGLRenderer({
 renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+window.addEventListener('resize', () => {
+  // Update sizes
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
+
+  // Update camera
+  camera.aspect = sizes.width / sizes.height;
+  camera.updateProjectionMatrix();
+
+  // Update renderer
+  renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+});
 
 /**
  * Animate

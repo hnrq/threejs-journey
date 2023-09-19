@@ -1,7 +1,9 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+
 import * as dat from 'lil-gui';
-import { getImage } from 'astro:assets';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+
+import gradientMapUrl from '@assets/textures/gradients/3.jpg?url';
 
 THREE.ColorManagement.enabled = false;
 
@@ -9,14 +11,7 @@ THREE.ColorManagement.enabled = false;
  * Textures
  */
 const textureLoader = new THREE.TextureLoader();
-const gradientTexture = textureLoader.load(
-  (
-    await getImage({
-      src: (await import('@assets/textures/gradients/3.jpg')).default,
-      format: 'jpg',
-    })
-  ).src,
-);
+const gradientTexture = textureLoader.load(gradientMapUrl);
 
 /**
  * Base
@@ -34,20 +29,6 @@ const sizes = {
   width: window.innerWidth,
   height: window.innerHeight,
 };
-
-window.addEventListener('resize', () => {
-  // Update sizes
-  sizes.width = window.innerWidth;
-  sizes.height = window.innerHeight;
-
-  // Update camera
-  camera.aspect = sizes.width / sizes.height;
-  camera.updateProjectionMatrix();
-
-  // Update renderer
-  renderer.setSize(sizes.width, sizes.height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-});
 
 /**
  * Camera
@@ -72,6 +53,20 @@ const renderer = new THREE.WebGLRenderer({
 renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+window.addEventListener('resize', () => {
+  // Update sizes
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
+
+  // Update camera
+  camera.aspect = sizes.width / sizes.height;
+  camera.updateProjectionMatrix();
+
+  // Update renderer
+  renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+});
 
 /**
  * Lights
