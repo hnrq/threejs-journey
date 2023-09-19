@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 node "$(dirname -- "$0")/generate-readme.js"
-pnpm run format 
+pnpm lint-staged
