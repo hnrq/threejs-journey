@@ -17,7 +17,6 @@
     "animejs": "^3.2.1",
     "astro": "^3.0.12",
     "lil-gui": "^0.18.2",
-    "sass": "^1.66.1",
     "three": "^0.156.1"
   },
   "devDependencies": {

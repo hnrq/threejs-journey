@@ -1,6 +1,6 @@
 <button><slot /></button>
 
-<style lang="scss">
+<style>
   button {
     background-color: transparent;
     color: white;
@@ -11,11 +11,11 @@
     transition-property: color, background-color;
     font-weight: bold;
     transition-timing-function: ease-in-out;
+  }
 
-    &:hover {
-      cursor: pointer;
-      color: black;
-      background: white;
-    }
+  button:hover {
+    cursor: pointer;
+    color: black;
+    background: white;
   }
 </style>
