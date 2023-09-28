@@ -5,6 +5,8 @@ import path from 'path';
 const formatDirNames = (name) =>
   `${name.substring(0, 2)} - ${name.charAt(3).toUpperCase()}${name.substring(4).replace('-', ' ')}`;
 
+const URL = 'https://threejs.hnrq.dev';
+
 const lessons = (
   await Promise.all(
     (await readdir(path.resolve('src', 'pages'), { withFileTypes: true }))
@@ -18,7 +20,7 @@ const lessons = (
           .filter((dirent) => dirent.isDirectory())
           .reduce(
             (acc, { name }) =>
-              `${acc} - [${formatDirNames(name)}](src/page/${dirent.name}/${name})\n`,
+              `${acc} - [${formatDirNames(name)}](${URL}/${dirent.name}/${name})\n`,
             '',
           );
 
@@ -28,6 +30,7 @@ const lessons = (
 ).join('\n\n');
 
 const readmeTemplate = `
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a8ea1771-b61c-46bd-81d5-4baf212a2c4e/deploy-status)](https://app.netlify.com/sites/stirring-biscochitos-671765/deploys)
 ![Header](src/assets/header.png)
 
 # Three.js Journey
