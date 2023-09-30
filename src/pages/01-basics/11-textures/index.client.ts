@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import minecraftTextureUrl from '@assets/textures/minecraft.png?url';
+import minecraftTextureUrl from './textures/minecraft.png?url';
 
 THREE.ColorManagement.enabled = false;
 

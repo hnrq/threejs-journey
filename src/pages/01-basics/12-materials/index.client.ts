@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import * as dat from 'lil-gui';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import gradientMapUrl from '@assets/textures/gradients/3.jpg?url';
+import gradientMapUrl from './textures/gradients/3.jpg?url';
 
 THREE.ColorManagement.enabled = false;
 

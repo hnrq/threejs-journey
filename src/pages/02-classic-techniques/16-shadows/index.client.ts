@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import * as dat from 'lil-gui';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import simpleShadowUrl from '@assets/textures/simpleShadow.jpg?url';
+import simpleShadowUrl from './textures/simpleShadow.jpg?url';
 
 THREE.ColorManagement.enabled = false;
 
