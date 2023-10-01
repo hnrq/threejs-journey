@@ -23,6 +23,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [15 - Lights](https://threejs.hnrq.dev/02-classic-techniques/15-lights)
  - [16 - Shadows](https://threejs.hnrq.dev/02-classic-techniques/16-shadows)
  - [17 - Haunted house](https://threejs.hnrq.dev/02-classic-techniques/17-haunted-house)
+ - [18 - Particles](https://threejs.hnrq.dev/02-classic-techniques/18-particles)
 
 
 ## 🧞 Commands
