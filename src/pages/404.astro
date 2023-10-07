@@ -125,16 +125,18 @@ import Layout from '@layouts/Layout.astro';
     justify-content: center;
   }
 
-  .error .starfield {
+  .error-404 .starfield {
     position: absolute;
   }
 
-  .error .content {
+  .error-404 .content {
     z-index: 1;
     text-align: center;
     display: flex;
     flex-direction: column;
+    margin: calc(2 * var(--base-spacing));
     align-items: center;
-    max-width: 80rem;
+    gap: calc(2 * var(--base-spacing));
+    max-width: 40rem;
   }
 </style>
