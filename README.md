@@ -28,6 +28,10 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [20 - Scroll based-animation](https://threejs.hnrq.dev/02-classic-techniques/20-scroll-based-animation)
 
 
+### 03 - Advanced techniques
+ - [21 - Physics](https://threejs.hnrq.dev/03-advanced-techniques/21-physics)
+
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
