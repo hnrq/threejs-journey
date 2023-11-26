@@ -8,28 +8,28 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
 ## Completed lessons
 ### 01 - Basics
  - [03 - Basic scene](https://threejs.hnrq.dev/01-basics/03-basic-scene)
- - [05 - Transform objects](https://threejs.hnrq.dev/01-basics/05-transform-objects)
- - [06 - Animations](https://threejs.hnrq.dev/01-basics/06-animations)
- - [07 - Cameras](https://threejs.hnrq.dev/01-basics/07-cameras)
- - [08 - Fullscreen and-resizing](https://threejs.hnrq.dev/01-basics/08-fullscreen-and-resizing)
- - [09 - Geometries](https://threejs.hnrq.dev/01-basics/09-geometries)
- - [10 - Debug ui](https://threejs.hnrq.dev/01-basics/10-debug-ui)
- - [11 - Textures](https://threejs.hnrq.dev/01-basics/11-textures)
- - [12 - Materials](https://threejs.hnrq.dev/01-basics/12-materials)
- - [13 - 3d text](https://threejs.hnrq.dev/01-basics/13-3d-text)
+ - [04 - Transform objects](https://threejs.hnrq.dev/01-basics/04-transform-objects)
+ - [05 - Animations](https://threejs.hnrq.dev/01-basics/05-animations)
+ - [06 - Cameras](https://threejs.hnrq.dev/01-basics/06-cameras)
+ - [07 - Fullscreen and-resizing](https://threejs.hnrq.dev/01-basics/07-fullscreen-and-resizing)
+ - [08 - Geometries](https://threejs.hnrq.dev/01-basics/08-geometries)
+ - [09 - Debug ui](https://threejs.hnrq.dev/01-basics/09-debug-ui)
+ - [10 - Textures](https://threejs.hnrq.dev/01-basics/10-textures)
+ - [11 - Materials](https://threejs.hnrq.dev/01-basics/11-materials)
+ - [12 - 3d text](https://threejs.hnrq.dev/01-basics/12-3d-text)
 
 
 ### 02 - Classic techniques
- - [15 - Lights](https://threejs.hnrq.dev/02-classic-techniques/15-lights)
- - [16 - Shadows](https://threejs.hnrq.dev/02-classic-techniques/16-shadows)
- - [17 - Haunted house](https://threejs.hnrq.dev/02-classic-techniques/17-haunted-house)
- - [18 - Particles](https://threejs.hnrq.dev/02-classic-techniques/18-particles)
- - [19 - Galaxy generator](https://threejs.hnrq.dev/02-classic-techniques/19-galaxy-generator)
- - [20 - Scroll based-animation](https://threejs.hnrq.dev/02-classic-techniques/20-scroll-based-animation)
+ - [14 - Lights](https://threejs.hnrq.dev/02-classic-techniques/14-lights)
+ - [15 - Shadows](https://threejs.hnrq.dev/02-classic-techniques/15-shadows)
+ - [16 - Haunted house](https://threejs.hnrq.dev/02-classic-techniques/16-haunted-house)
+ - [17 - Particles](https://threejs.hnrq.dev/02-classic-techniques/17-particles)
+ - [18 - Galaxy generator](https://threejs.hnrq.dev/02-classic-techniques/18-galaxy-generator)
+ - [19 - Scroll based-animation](https://threejs.hnrq.dev/02-classic-techniques/19-scroll-based-animation)
 
 
 ### 03 - Advanced techniques
- - [21 - Physics](https://threejs.hnrq.dev/03-advanced-techniques/21-physics)
+ - [20 - Physics](https://threejs.hnrq.dev/03-advanced-techniques/20-physics)
 
 
 ## 🧞 Commands
