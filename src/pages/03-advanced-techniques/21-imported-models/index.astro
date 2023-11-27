@@ -1,0 +1,19 @@
+---
+import Layout from '@layouts/Layout.astro';
+---
+
+<script src="./index.client.ts"></script>
+
+<Layout title="21 - Imported Models">
+  <canvas class="webgl"></canvas>
+</Layout>
+
+<style>
+  :global(.controller) {
+    opacity: 0.5;
+  }
+
+  :global(.controller.controller--active) {
+    opacity: 1;
+  }
+</style>

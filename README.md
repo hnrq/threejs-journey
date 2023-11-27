@@ -30,6 +30,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
 
 ### 03 - Advanced techniques
  - [20 - Physics](https://threejs.hnrq.dev/03-advanced-techniques/20-physics)
+ - [21 - Imported models](https://threejs.hnrq.dev/03-advanced-techniques/21-imported-models)
 
 
 ## 🧞 Commands
