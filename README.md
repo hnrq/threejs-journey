@@ -31,6 +31,8 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
 ### 03 - Advanced techniques
  - [20 - Physics](https://threejs.hnrq.dev/03-advanced-techniques/20-physics)
  - [21 - Imported models](https://threejs.hnrq.dev/03-advanced-techniques/21-imported-models)
+ - [22 - Raycaster and-mouse-events](https://threejs.hnrq.dev/03-advanced-techniques/22-raycaster-and-mouse-events)
+ - [23 - Custom models-with-blender](https://threejs.hnrq.dev/03-advanced-techniques/23-custom-models-with-blender)
 
 
 ## 🧞 Commands
