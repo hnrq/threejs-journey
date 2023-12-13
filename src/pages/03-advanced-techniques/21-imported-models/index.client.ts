@@ -4,7 +4,7 @@ import GUI, { Controller } from 'lil-gui';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-import FoxModel from './models/Fox.glb?url';
+import FoxModel from '@assets/models/Fox.glb?url';
 
 /**
  * Base
