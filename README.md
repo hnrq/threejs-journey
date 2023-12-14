@@ -37,8 +37,8 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
 
 
 ### 04 - Shaders
- - [24 - Environment map](https://threejs.hnrq.dev/04-shaders/24-environment-map)
  - [27 - Shaders](https://threejs.hnrq.dev/04-shaders/27-shaders)
+ - [28 - Shader patterns](https://threejs.hnrq.dev/04-shaders/28-shader-patterns)
 
 
 ## 🧞 Commands
