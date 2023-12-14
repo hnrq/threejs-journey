@@ -25,8 +25,6 @@ dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
 const gltfLoader = new GLTFLoader();
 gltfLoader.setDRACOLoader(dracoLoader);
 
-const mixer = null;
-
 gltfLoader.load(HamburgerModel, (gltf) => {
   scene.add(gltf.scene);
 });
@@ -109,21 +107,7 @@ window.addEventListener('resize', () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
-/**
- * Animate
- */
-const clock = new THREE.Clock();
-let previousTime = 0;
-
 const tick = () => {
-  const elapsedTime = clock.getElapsedTime();
-  const deltaTime = elapsedTime - previousTime;
-  previousTime = elapsedTime;
-
-  if (mixer) {
-    mixer.update(deltaTime);
-  }
-
   // Update controls
   controls.update();
 

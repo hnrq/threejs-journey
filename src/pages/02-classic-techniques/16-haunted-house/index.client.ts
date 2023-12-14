@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-import * as dat from 'lil-gui';
+import { GUI } from 'lil-gui';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import bricksAmbientOcclusionTextureUrl from './textures/bricks/ambientOcclusion.jpg?url';
@@ -25,7 +25,7 @@ THREE.ColorManagement.enabled = false;
  * Base
  */
 // Debug
-const gui = new dat.GUI();
+const gui = new GUI();
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;

@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-import * as dat from 'lil-gui';
+import { GUI } from 'lil-gui';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 THREE.ColorManagement.enabled = false;
@@ -80,7 +80,7 @@ const generateGalaxy = () => {
 generateGalaxy();
 
 // Debug
-const gui = new dat.GUI();
+const gui = new GUI();
 gui.add(parameters, 'count').min(100).max(1000000).step(100).onFinishChange(generateGalaxy);
 gui.add(parameters, 'size').min(0.001).max(0.1).step(0.001).onFinishChange(generateGalaxy);
 gui.add(parameters, 'radius').min(0.01).max(20).step(0.01).onFinishChange(generateGalaxy);
