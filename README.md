@@ -36,6 +36,11 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [24 - Environment map](https://threejs.hnrq.dev/03-advanced-techniques/24-environment-map)
 
 
+### 04 - Shaders
+ - [24 - Environment map](https://threejs.hnrq.dev/04-shaders/24-environment-map)
+ - [27 - Shaders](https://threejs.hnrq.dev/04-shaders/27-shaders)
+
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
