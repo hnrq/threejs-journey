@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import particleTextureUrl from './textures/particles/11.png?url';
+import particleTextureUrl from './_textures/particles/11.png?url';
 
 /**
  * Base

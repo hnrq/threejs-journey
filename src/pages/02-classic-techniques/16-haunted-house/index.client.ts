@@ -3,21 +3,21 @@ import * as THREE from 'three';
 import { GUI } from 'lil-gui';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import bricksAmbientOcclusionTextureUrl from './textures/bricks/ambientOcclusion.jpg?url';
-import bricksColorTextureUrl from './textures/bricks/color.jpg?url';
-import bricksNormalTextureUrl from './textures/bricks/normal.jpg?url';
-import bricksRoughnessTextureUrl from './textures/bricks/roughness.jpg?url';
-import doorAlphaTextureUrl from './textures/door/alpha.jpg?url';
-import doorAmbientOcclusionTextureUrl from './textures/door/ambientOcclusion.jpg?url';
-import doorColorTextureUrl from './textures/door/color.jpg?url';
-import doorHeightTextureUrl from './textures/door/height.jpg?url';
-import doorMetalnessTextureUrl from './textures/door/metalness.jpg?url';
-import doorNormalTextureUrl from './textures/door/normal.jpg?url';
-import doorRoughnessTextureUrl from './textures/door/roughness.jpg?url';
-import grassAmbientOcclusionTextureUrl from './textures/grass/ambientOcclusion.jpg?url';
-import grassColorTextureUrl from './textures/grass/color.jpg?url';
-import grassNormalTextureUrl from './textures/grass/normal.jpg?url';
-import grassRoughnessTextureUrl from './textures/grass/roughness.jpg?url';
+import bricksAmbientOcclusionTextureUrl from './_textures/bricks/ambientOcclusion.jpg?url';
+import bricksColorTextureUrl from './_textures/bricks/color.jpg?url';
+import bricksNormalTextureUrl from './_textures/bricks/normal.jpg?url';
+import bricksRoughnessTextureUrl from './_textures/bricks/roughness.jpg?url';
+import doorAlphaTextureUrl from './_textures/door/alpha.jpg?url';
+import doorAmbientOcclusionTextureUrl from './_textures/door/ambientOcclusion.jpg?url';
+import doorColorTextureUrl from './_textures/door/color.jpg?url';
+import doorHeightTextureUrl from './_textures/door/height.jpg?url';
+import doorMetalnessTextureUrl from './_textures/door/metalness.jpg?url';
+import doorNormalTextureUrl from './_textures/door/normal.jpg?url';
+import doorRoughnessTextureUrl from './_textures/door/roughness.jpg?url';
+import grassAmbientOcclusionTextureUrl from './_textures/grass/ambientOcclusion.jpg?url';
+import grassColorTextureUrl from './_textures/grass/color.jpg?url';
+import grassNormalTextureUrl from './_textures/grass/normal.jpg?url';
+import grassRoughnessTextureUrl from './_textures/grass/roughness.jpg?url';
 
 THREE.ColorManagement.enabled = false;
 

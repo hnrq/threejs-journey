@@ -3,9 +3,9 @@ import * as THREE from 'three';
 import { GUI } from 'lil-gui';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import fragmentShader from './shaders/fragment.glsl';
-import vertexShader from './shaders/vertex.glsl';
-import dominicaFlagTexture from './textures/dominica-flag.webp?url';
+import fragmentShader from './_shaders/fragment.glsl';
+import vertexShader from './_shaders/vertex.glsl';
+import dominicaFlagTexture from './_textures/dominica-flag.webp?url';
 
 /**
  * Base

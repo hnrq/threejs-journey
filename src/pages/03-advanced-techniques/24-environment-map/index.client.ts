@@ -4,9 +4,9 @@ import { GUI } from 'lil-gui';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-import FoxModel from '@assets/models/Fox.glb?url';
+import FoxModel from '@assets/_models/Fox.glb?url';
 
-import animeArtEnvironmentMap from './environmentMaps/anime_art_style_japan_streets_with_cherry_blossom_.jpg?url';
+import animeArtEnvironmentMap from './_environmentMaps/anime_art_style_japan_streets_with_cherry_blossom_.jpg?url';
 
 /**
  * Loaders

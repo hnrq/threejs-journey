@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import anime from 'animejs';
 import * as dat from 'lil-gui';
 
-import gradientTextureUrl from './textures/gradient/3.jpg?url';
+import gradientTextureUrl from './_textures/gradient/3.jpg?url';
 
 THREE.ColorManagement.enabled = false;
 
