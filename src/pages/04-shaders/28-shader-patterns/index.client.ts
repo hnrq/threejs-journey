@@ -2,8 +2,8 @@ import * as THREE from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import testFragmentShader from './shaders/fragment.glsl';
-import testVertexShader from './shaders/vertex.glsl';
+import testFragmentShader from './_shaders/fragment.glsl';
+import testVertexShader from './_shaders/vertex.glsl';
 
 /**
  * Base
