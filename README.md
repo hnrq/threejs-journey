@@ -41,6 +41,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [28 - Shader patterns](https://threejs.hnrq.dev/04-shaders/28-shader-patterns)
  - [29 - Raging sea](https://threejs.hnrq.dev/04-shaders/29-raging-sea)
  - [30 - Animated galaxy](https://threejs.hnrq.dev/04-shaders/30-animated-galaxy)
+ - [31 - Modified materials](https://threejs.hnrq.dev/04-shaders/31-modified-materials)
 
 
 ## 🧞 Commands
