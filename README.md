@@ -42,9 +42,10 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [29 - Raging sea](https://threejs.hnrq.dev/04-shaders/29-raging-sea)
  - [30 - Animated galaxy](https://threejs.hnrq.dev/04-shaders/30-animated-galaxy)
  - [31 - Modified materials](https://threejs.hnrq.dev/04-shaders/31-modified-materials)
- - [32 - Coffee smoke-shader](https://threejs.hnrq.dev/04-shaders/32-coffee-smoke-shader)
- - [33 - Hologram shader](https://threejs.hnrq.dev/04-shaders/33-hologram-shader)
- - [34 - Fireworks shader](https://threejs.hnrq.dev/04-shaders/34-fireworks-shader)
+ - [32 - Coffee smoke](https://threejs.hnrq.dev/04-shaders/32-coffee-smoke)
+ - [33 - Hologram](https://threejs.hnrq.dev/04-shaders/33-hologram)
+ - [34 - Fireworks](https://threejs.hnrq.dev/04-shaders/34-fireworks)
+ - [35 - Lighting shading](https://threejs.hnrq.dev/04-shaders/35-lighting-shading)
 
 
 ## 🧞 Commands
