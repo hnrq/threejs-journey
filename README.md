@@ -46,6 +46,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [33 - Hologram](https://threejs.hnrq.dev/04-shaders/33-hologram)
  - [34 - Fireworks](https://threejs.hnrq.dev/04-shaders/34-fireworks)
  - [35 - Lighting shading](https://threejs.hnrq.dev/04-shaders/35-lighting-shading)
+ - [36 - Raging sea-shading](https://threejs.hnrq.dev/04-shaders/36-raging-sea-shading)
 
 
 ## 🧞 Commands
