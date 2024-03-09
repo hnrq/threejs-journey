@@ -44,6 +44,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [31 - Modified materials](https://threejs.hnrq.dev/04-shaders/31-modified-materials)
  - [32 - Coffee smoke-shader](https://threejs.hnrq.dev/04-shaders/32-coffee-smoke-shader)
  - [33 - Hologram shader](https://threejs.hnrq.dev/04-shaders/33-hologram-shader)
+ - [34 - Fireworks shader](https://threejs.hnrq.dev/04-shaders/34-fireworks-shader)
 
 
 ## 🧞 Commands
