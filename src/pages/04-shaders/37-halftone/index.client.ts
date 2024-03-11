@@ -6,8 +6,8 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 import suzanneModel from '@assets/_models/suzanne.glb?url';
 
-import shadingFragmentShader from './_shaders/fragment.glsl';
-import shadingVertexShader from './_shaders/vertex.glsl';
+import fragmentShader from './_shaders/fragment.glsl';
+import vertexShader from './_shaders/vertex.glsl';
 
 /**
  * Base
@@ -50,70 +50,53 @@ controls.enableDamping = true;
 /**
  * Renderer
  */
+const rendererParameters = { clearColor: 0x26132f };
+
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-// renderer.toneMapping = THREE.ACESFilmicToneMapping
-// renderer.toneMappingExposure = 3
+renderer.setClearColor(rendererParameters.clearColor);
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(sizes.pixelRatio);
+
+gui.addColor(rendererParameters, 'clearColor').onChange(() => {
+  renderer.setClearColor(rendererParameters.clearColor);
+});
 
 /**
  * Material
  */
-const materialParameters = {
-  color: 0xffffff,
-  ambientLightColor: 0xffffff,
-  directionalLightColor: 0xff05dd,
-  pointLightColor: 0x00ff00,
-};
+const materialParameters = { color: 0xff794d, shadowColor: 0x8e19b8, lightColor: 0xe5ffe0 };
 
 const material = new THREE.ShaderMaterial({
-  vertexShader: shadingVertexShader,
-  fragmentShader: shadingFragmentShader,
+  vertexShader: vertexShader,
+  fragmentShader: fragmentShader,
   uniforms: {
     uColor: new THREE.Uniform(new THREE.Color(materialParameters.color)),
-    uAmbientLightColor: new THREE.Uniform(new THREE.Color(materialParameters.ambientLightColor)),
-    uPointLightColor: new THREE.Uniform(new THREE.Color(materialParameters.pointLightColor)),
-    uDirectionalLightColor: new THREE.Uniform(
-      new THREE.Color(materialParameters.directionalLightColor),
+    uShadowColor: new THREE.Uniform(new THREE.Color(materialParameters.shadowColor)),
+    uLightColor: new THREE.Uniform(new THREE.Color(materialParameters.lightColor)),
+    uResolution: new THREE.Uniform(
+      new THREE.Vector2(sizes.width * sizes.pixelRatio, sizes.height * sizes.pixelRatio),
     ),
+    uLightRepetitions: new THREE.Uniform(130),
+    uShadowRepetitions: new THREE.Uniform(100),
   },
 });
 
-gui.addColor(materialParameters, 'color').onChange((value: string) => {
-  material.uniforms.uColor.value.set(value);
+gui.addColor(materialParameters, 'color').onChange(() => {
+  material.uniforms.uColor.value.set(materialParameters.color);
 });
+gui.add(material.uniforms.uLightRepetitions, 'value').min(1).max(300).step(1);
 
-gui.addColor(materialParameters, 'ambientLightColor').onChange((value: string) => {
-  material.uniforms.uAmbientLightColor.value.set(value);
+gui.addColor(materialParameters, 'lightColor').onChange(() => {
+  material.uniforms.uLightColor.value.set(materialParameters.lightColor);
 });
-
-gui.addColor(materialParameters, 'directionalLightColor').onChange((value: string) => {
-  material.uniforms.uDirectionalLightColor.value.set(value);
-});
-
-gui.addColor(materialParameters, 'pointLightColor').onChange((value: string) => {
-  material.uniforms.uPointLightColor.value.set(value);
-});
-
-window.addEventListener('resize', () => {
-  // Update sizes
-  sizes.width = window.innerWidth;
-  sizes.height = window.innerHeight;
-  sizes.pixelRatio = Math.min(window.devicePixelRatio, 2);
-
-  // Update camera
-  camera.aspect = sizes.width / sizes.height;
-  camera.updateProjectionMatrix();
-
-  // Update renderer
-  renderer.setSize(sizes.width, sizes.height);
-  renderer.setPixelRatio(sizes.pixelRatio);
+gui.add(material.uniforms.uShadowRepetitions, 'value').min(1).max(300).step(1);
+gui.addColor(materialParameters, 'shadowColor').onChange(() => {
+  material.uniforms.uShadowColor.value.set(materialParameters.shadowColor);
 });
 
 /**
  * Objects
  */
-
 // Torus knot
 const torusKnot = new THREE.Mesh(new THREE.TorusKnotGeometry(0.6, 0.25, 128, 32), material);
 torusKnot.position.x = 3;
@@ -133,6 +116,26 @@ gltfLoader.load(suzanneModel, (gltf) => {
     if ((child as THREE.Mesh).isMesh) (child as THREE.Mesh).material = material;
   });
   scene.add(suzanne);
+});
+
+window.addEventListener('resize', () => {
+  // Update sizes
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
+  sizes.pixelRatio = Math.min(window.devicePixelRatio, 2);
+  // Update materials
+  material.uniforms.uResolution.value.set(
+    sizes.width * sizes.pixelRatio,
+    sizes.height * sizes.pixelRatio,
+  );
+
+  // Update camera
+  camera.aspect = sizes.width / sizes.height;
+  camera.updateProjectionMatrix();
+
+  // Update renderer
+  renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(sizes.pixelRatio);
 });
 
 /**
