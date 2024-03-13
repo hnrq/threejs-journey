@@ -17,15 +17,15 @@
     "@dimforge/rapier3d": "^0.12.0",
     "@fontsource/b612-mono": "^5.0.18",
     "animejs": "^3.2.2",
-    "astro": "^4.4.12",
+    "astro": "^4.5.2",
     "lil-gui": "^0.19.2",
     "three": "^0.162.0"
   },
   "devDependencies": {
     "@types/animejs": "^3.1.12",
     "@types/three": "^0.162.0",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
