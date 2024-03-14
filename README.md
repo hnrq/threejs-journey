@@ -49,6 +49,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [36 - Raging sea-shading](https://threejs.hnrq.dev/04-shaders/36-raging-sea-shading)
  - [37 - Halftone](https://threejs.hnrq.dev/04-shaders/37-halftone)
  - [38 - Earth](https://threejs.hnrq.dev/04-shaders/38-earth)
+ - [39 - Particles cursor](https://threejs.hnrq.dev/04-shaders/39-particles-cursor)
 
 
 ## 🧞 Commands
