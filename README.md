@@ -52,6 +52,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [39 - Particles cursor](https://threejs.hnrq.dev/04-shaders/39-particles-cursor)
  - [40 - Particles morphing](https://threejs.hnrq.dev/04-shaders/40-particles-morphing)
  - [41 - Gpgpu flow-field-particles](https://threejs.hnrq.dev/04-shaders/41-gpgpu-flow-field-particles)
+ - [42 - Wobbly sphere](https://threejs.hnrq.dev/04-shaders/42-wobbly-sphere)
 
 
 ## 🧞 Commands
