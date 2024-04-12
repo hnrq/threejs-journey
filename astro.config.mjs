@@ -1,4 +1,4 @@
-import netlify from '@astrojs/netlify/functions';
+import netlify from '@astrojs/netlify';
 import { defineConfig } from 'astro/config';
 import glsl from 'vite-plugin-glsl';
 import wasm from 'vite-plugin-wasm';
