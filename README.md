@@ -54,6 +54,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [41 - Gpgpu flow-field-particles](https://threejs.hnrq.dev/04-shaders/41-gpgpu-flow-field-particles)
  - [42 - Wobbly sphere](https://threejs.hnrq.dev/04-shaders/42-wobbly-sphere)
  - [43 - Sliced model](https://threejs.hnrq.dev/04-shaders/43-sliced-model)
+ - [44 - Procedural terrain](https://threejs.hnrq.dev/04-shaders/44-procedural-terrain)
 
 
 ## 🧞 Commands

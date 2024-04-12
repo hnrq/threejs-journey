@@ -87,7 +87,6 @@ const slicedMaterial = new CustomShaderMaterial({
 const slicedDepthMaterial = new CustomShaderMaterial({
   baseMaterial: THREE.MeshDepthMaterial,
   vertexShader: slicedVertexShader,
-  fragmentShader: slicedFragmentShader,
   depthPacking: THREE.RGBADepthPacking,
   patchMap,
   uniforms,
