@@ -59,6 +59,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
 
 ### 05 - Extra
  - [45 - Post processing](https://threejs.hnrq.dev/05-extra/45-post-processing)
+ - [46 - Performance tips](https://threejs.hnrq.dev/05-extra/46-performance-tips)
 
 
 ## 🧞 Commands
