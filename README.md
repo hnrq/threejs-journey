@@ -57,6 +57,10 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [44 - Procedural terrain](https://threejs.hnrq.dev/04-shaders/44-procedural-terrain)
 
 
+### 05 - Extra
+ - [45 - Post processing](https://threejs.hnrq.dev/05-extra/45-post-processing)
+
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
