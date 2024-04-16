@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-node "$(dirname -- "$0")/generate-readme.js"
+node "$(dirname -- "$0")/generate-readme.mjs"
 pnpm lint-staged

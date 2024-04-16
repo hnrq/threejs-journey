@@ -7,8 +7,6 @@ import wasm from 'vite-plugin-wasm';
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: netlify(),
-  vite: {
-    plugins: [wasm(), glsl()],
-  },
+  adapter: netlify({ edgeMiddleware: true }),
+  vite: { plugins: [wasm(), glsl()] },
 });

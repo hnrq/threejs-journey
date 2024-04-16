@@ -1,6 +1,5 @@
 {
   "name": "threejs-journey",
-  "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
@@ -17,7 +16,7 @@
     "@dimforge/rapier3d": "^0.12.0",
     "@fontsource/b612-mono": "^5.0.18",
     "animejs": "^3.2.2",
-    "astro": "^4.6.0",
+    "astro": "^4.6.1",
     "lil-gui": "^0.19.2",
     "three": "^0.163.0",
     "three-bvh-csg": "^0.0.16",
@@ -26,8 +25,8 @@
   "devDependencies": {
     "@types/animejs": "^3.1.12",
     "@types/three": "^0.163.0",
-    "@typescript-eslint/eslint-plugin": "^7.6.0",
-    "@typescript-eslint/parser": "^7.6.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
