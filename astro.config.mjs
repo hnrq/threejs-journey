@@ -8,5 +8,7 @@ import wasm from 'vite-plugin-wasm';
 export default defineConfig({
   output: 'server',
   adapter: netlify({ edgeMiddleware: true }),
-  vite: { plugins: [wasm(), glsl()] },
+  vite: {
+    plugins: [wasm(), glsl()]
+  },
 });

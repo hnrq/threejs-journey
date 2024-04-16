@@ -4,7 +4,7 @@ import { GUI } from 'lil-gui';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import { Brush, Evaluator, SUBTRACTION } from 'three-bvh-csg';
-import CustomShaderMaterial from 'three-custom-shader-material/vanilla';
+import CustomShaderMaterial from 'three-custom-shader-material/vanilla/dist/three-custom-shader-material-vanilla.cjs';
 
 import terrainFragmentShader from './_shaders/terrain/fragment.glsl';
 import terrainVertexShader from './_shaders/terrain/vertex.glsl';
