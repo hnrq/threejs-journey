@@ -1,0 +1,45 @@
+---
+import Layout from '@layouts/Layout.astro';
+---
+
+<script src="./index.client.ts"></script>
+
+<Layout title="47 - Intro and Loading Progress">
+  <canvas class="webgl"></canvas>
+  <div class="loading-bar" role="progressbar"></div>
+  <span class="loading-label">0%</span>
+</Layout>
+
+<style>
+  .loading-bar {
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    left: 50%;
+    background: #ffffff;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+  }
+
+  .loading-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #ffffff;
+    mix-blend-mode: difference;
+  }
+
+  .loading-bar.ended {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+</style>
