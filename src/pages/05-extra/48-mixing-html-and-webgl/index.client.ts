@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import anime from 'animejs';
 
-import flightHelmetModelUrl from './_models/FlightHelmet/FlightHelmet.gltf?url';
+import damagedHelmetModelUrl from './_models/DamagedHelmet/DamagedHelmet.gltf?url';
 import environmentMapNXUrl from '@assets/_environmentMaps/streets/nx.jpg?url';
 import environmentMapNYUrl from '@assets/_environmentMaps/streets/ny.jpg?url';
 import environmentMapNZUrl from '@assets/_environmentMaps/streets/nz.jpg?url';
@@ -12,13 +12,37 @@ import environmentMapPYUrl from '@assets/_environmentMaps/streets/py.jpg?url';
 import environmentMapPZUrl from '@assets/_environmentMaps/streets/pz.jpg?url';
 
 /**
+ * Loaders
+ */
+const loadingBarElement = <HTMLDivElement>document.querySelector('.loading-bar');
+const loadingManager = new THREE.LoadingManager(
+  // Loaded
+  () => {
+    anime({ targets: overlayMaterial.uniforms.uAlpha, duration: 3000, value: 0, delay: 1 });
+
+    loadingBarElement.classList.add('ended');
+    loadingBarElement.style.transform = '';
+  },
+  (_itemUrl, itemsLoaded, itemsTotal) => {
+    loadingBarElement.style.transform = `scaleX(${itemsLoaded / itemsTotal})`;
+    sceneReady = true;
+  },
+);
+const gltfLoader = new GLTFLoader(loadingManager);
+const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager);
+
+/**
  * Base
  */
+let sceneReady = false;
+
 // Debug
-const debugObject = { envMapIntensity: 2.5 };
+const debugObject = {
+  envMapIntensity: 2.5,
+};
 
 // Canvas
-const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
+const canvas = <HTMLCanvasElement>document.querySelector('canvas.webgl');
 
 // Scene
 const scene = new THREE.Scene();
@@ -28,8 +52,11 @@ const scene = new THREE.Scene();
  */
 const overlayGeometry = new THREE.PlaneGeometry(2, 2, 1, 1);
 const overlayMaterial = new THREE.ShaderMaterial({
+  // wireframe: true,
   transparent: true,
-  uniforms: { uAlpha: new THREE.Uniform(1) },
+  uniforms: {
+    uAlpha: new THREE.Uniform(1),
+  },
   vertexShader: `
     void main() {
       gl_Position = vec4(position, 1.0);
@@ -46,43 +73,25 @@ const overlayMaterial = new THREE.ShaderMaterial({
 const overlay = new THREE.Mesh(overlayGeometry, overlayMaterial);
 scene.add(overlay);
 
-/**
- * Loaders
- */
-const loadingBarElement = document.querySelector('.loading-bar') as HTMLDivElement;
-const loadingLabelElement = document.querySelector('.loading-label') as HTMLDivElement;
-const loadingManager = new THREE.LoadingManager(
-  () => {
-    anime
-      .timeline()
-      .add({
-        targets: loadingBarElement,
-        scale: 30,
-        duration: 2000,
-        complete: () => {
-          overlayMaterial.uniforms.uAlpha.value = 0;
-          scene.remove(overlay);
-          overlayGeometry.dispose();
-          overlayMaterial.dispose();
-          loadingLabelElement.textContent = '';
-        },
-      })
-      .add({
-        targets: loadingBarElement,
-        opacity: 0,
-        duration: 3000,
-      });
+const points = [
+  {
+    position: new THREE.Vector3(1.55, 0.3, -0.6),
+    element: <HTMLDivElement>document.querySelector('.point-0'),
   },
+  {
+    position: new THREE.Vector3(0.5, 0.8, -1.6),
+    element: <HTMLDivElement>document.querySelector('.point-1'),
+  },
+  {
+    position: new THREE.Vector3(1.6, -1.3, -0.7),
+    element: <HTMLDivElement>document.querySelector('.point-2'),
+  },
+];
 
-  // Progress
-  (_itemUrl, itemsLoaded, itemsTotal) => {
-    const progress = itemsLoaded / itemsTotal;
-    loadingBarElement.style.transform = `translate(-50%, -50%) scale(${progress})`;
-    loadingLabelElement.textContent = `${Math.round(progress * 100)}%`;
-  },
-);
-const gltfLoader = new GLTFLoader(loadingManager);
-const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager);
+/**
+ * Raycaster
+ */
+const raycaster = new THREE.Raycaster();
 
 /**
  * Update all materials
@@ -90,6 +99,7 @@ const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager);
 const updateAllMaterials = () => {
   scene.traverse((child) => {
     if (child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial) {
+      // child.material.envMap = environmentMap
       child.material.envMapIntensity = debugObject.envMapIntensity;
       child.material.needsUpdate = true;
       child.castShadow = true;
@@ -118,9 +128,8 @@ scene.environment = environmentMap;
 /**
  * Models
  */
-gltfLoader.load(flightHelmetModelUrl, (gltf) => {
-  gltf.scene.scale.set(10, 10, 10);
-  gltf.scene.position.set(0, -4, 0);
+gltfLoader.load(damagedHelmetModelUrl, (gltf) => {
+  gltf.scene.scale.set(2.5, 2.5, 2.5);
   gltf.scene.rotation.y = Math.PI * 0.5;
   scene.add(gltf.scene);
 
@@ -193,6 +202,25 @@ const tick = () => {
   // Render
   renderer.render(scene, camera);
 
+  if (sceneReady)
+    points.forEach((point) => {
+      const screenPosition = point.position.clone();
+      screenPosition.project(camera);
+
+      const translateX = screenPosition.x * sizes.width * 0.5;
+      const translateY = -screenPosition.y * sizes.height * 0.5;
+      point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`;
+
+      raycaster.setFromCamera(screenPosition as unknown as THREE.Vector2, camera);
+      const intersects = raycaster.intersectObjects(scene.children, true);
+
+      if (intersects.length === 0) point.element.classList.add('visible');
+      else
+        point.element.classList.toggle(
+          'visible',
+          intersects[0].distance > point.position.distanceTo(camera.position),
+        );
+    });
   // Call tick again on the next frame
   window.requestAnimationFrame(tick);
 };
