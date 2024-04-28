@@ -17,7 +17,7 @@ const lessons = (
             withFileTypes: true,
           })
         )
-          .filter((dirent) => dirent.isDirectory())
+          .filter((dirent) => dirent.isDirectory() && !isNaN(dirent.name.charAt(0)))
           .reduce(
             (acc, { name }) =>
               `${acc} - [${formatDirNames(name)}](${URL}/${dirent.name}/${name})\n`,
