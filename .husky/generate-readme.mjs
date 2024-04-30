@@ -3,7 +3,7 @@ import { writeFileSync } from 'fs';
 import path from 'path';
 
 const formatDirNames = (name) =>
-  `${name.substring(0, 2)} - ${name.charAt(3).toUpperCase()}${name.substring(4).replace('-', ' ')}`;
+  `${name.substring(0, 2)} - ${name.charAt(3).toUpperCase()}${name.substring(4).replaceAll('-', ' ')}`;
 
 const URL = 'https://threejs.hnrq.dev';
 

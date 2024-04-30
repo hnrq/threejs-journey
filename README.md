@@ -11,7 +11,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [04 - Transform objects](https://threejs.hnrq.dev/01-basics/04-transform-objects)
  - [05 - Animations](https://threejs.hnrq.dev/01-basics/05-animations)
  - [06 - Cameras](https://threejs.hnrq.dev/01-basics/06-cameras)
- - [07 - Fullscreen and-resizing](https://threejs.hnrq.dev/01-basics/07-fullscreen-and-resizing)
+ - [07 - Fullscreen and resizing](https://threejs.hnrq.dev/01-basics/07-fullscreen-and-resizing)
  - [08 - Geometries](https://threejs.hnrq.dev/01-basics/08-geometries)
  - [09 - Debug ui](https://threejs.hnrq.dev/01-basics/09-debug-ui)
  - [10 - Textures](https://threejs.hnrq.dev/01-basics/10-textures)
@@ -25,14 +25,14 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [16 - Haunted house](https://threejs.hnrq.dev/02-classic-techniques/16-haunted-house)
  - [17 - Particles](https://threejs.hnrq.dev/02-classic-techniques/17-particles)
  - [18 - Galaxy generator](https://threejs.hnrq.dev/02-classic-techniques/18-galaxy-generator)
- - [19 - Scroll based-animation](https://threejs.hnrq.dev/02-classic-techniques/19-scroll-based-animation)
+ - [19 - Scroll based animation](https://threejs.hnrq.dev/02-classic-techniques/19-scroll-based-animation)
 
 
 ### 03 - Advanced techniques
  - [20 - Physics](https://threejs.hnrq.dev/03-advanced-techniques/20-physics)
  - [21 - Imported models](https://threejs.hnrq.dev/03-advanced-techniques/21-imported-models)
- - [22 - Raycaster and-mouse-events](https://threejs.hnrq.dev/03-advanced-techniques/22-raycaster-and-mouse-events)
- - [23 - Custom models-with-blender](https://threejs.hnrq.dev/03-advanced-techniques/23-custom-models-with-blender)
+ - [22 - Raycaster and mouse events](https://threejs.hnrq.dev/03-advanced-techniques/22-raycaster-and-mouse-events)
+ - [23 - Custom models with blender](https://threejs.hnrq.dev/03-advanced-techniques/23-custom-models-with-blender)
  - [24 - Environment map](https://threejs.hnrq.dev/03-advanced-techniques/24-environment-map)
 
 
@@ -46,12 +46,12 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [33 - Hologram](https://threejs.hnrq.dev/04-shaders/33-hologram)
  - [34 - Fireworks](https://threejs.hnrq.dev/04-shaders/34-fireworks)
  - [35 - Lighting shading](https://threejs.hnrq.dev/04-shaders/35-lighting-shading)
- - [36 - Raging sea-shading](https://threejs.hnrq.dev/04-shaders/36-raging-sea-shading)
+ - [36 - Raging sea shading](https://threejs.hnrq.dev/04-shaders/36-raging-sea-shading)
  - [37 - Halftone](https://threejs.hnrq.dev/04-shaders/37-halftone)
  - [38 - Earth](https://threejs.hnrq.dev/04-shaders/38-earth)
  - [39 - Particles cursor](https://threejs.hnrq.dev/04-shaders/39-particles-cursor)
  - [40 - Particles morphing](https://threejs.hnrq.dev/04-shaders/40-particles-morphing)
- - [41 - Gpgpu flow-field-particles](https://threejs.hnrq.dev/04-shaders/41-gpgpu-flow-field-particles)
+ - [41 - Gpgpu flow field particles](https://threejs.hnrq.dev/04-shaders/41-gpgpu-flow-field-particles)
  - [42 - Wobbly sphere](https://threejs.hnrq.dev/04-shaders/42-wobbly-sphere)
  - [43 - Sliced model](https://threejs.hnrq.dev/04-shaders/43-sliced-model)
  - [44 - Procedural terrain](https://threejs.hnrq.dev/04-shaders/44-procedural-terrain)
@@ -60,12 +60,13 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
 ### 05 - Extra
  - [45 - Post processing](https://threejs.hnrq.dev/05-extra/45-post-processing)
  - [46 - Performance tips](https://threejs.hnrq.dev/05-extra/46-performance-tips)
- - [47 - Intro and-loading-progress](https://threejs.hnrq.dev/05-extra/47-intro-and-loading-progress)
- - [48 - Mixing html-and-webgl](https://threejs.hnrq.dev/05-extra/48-mixing-html-and-webgl)
+ - [47 - Intro and loading progress](https://threejs.hnrq.dev/05-extra/47-intro-and-loading-progress)
+ - [48 - Mixing html and webgl](https://threejs.hnrq.dev/05-extra/48-mixing-html-and-webgl)
 
 
 ### 06 - Portal scene
- - [51 - Importing and-optimizing-the-scene](https://threejs.hnrq.dev/06-portal-scene/51-importing-and-optimizing-the-scene)
+ - [51 - Importing and optimizing the scene](https://threejs.hnrq.dev/06-portal-scene/51-importing-and-optimizing-the-scene)
+ - [52 - Adding details to the scene](https://threejs.hnrq.dev/06-portal-scene/52-adding-details-to-the-scene)
 
 
 ## 🧞 Commands
