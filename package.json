@@ -1,6 +1,7 @@
 {
   "name": "threejs-journey",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,15 +14,20 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^5.2.0",
+    "@astrojs/svelte": "^5.4.0",
     "@dimforge/rapier3d": "^0.12.0",
     "@fontsource/b612-mono": "^5.0.19",
+    "@threlte/core": "^7.3.0",
+    "@threlte/extras": "^8.11.2",
     "animejs": "^3.2.2",
     "astro": "^4.7.0",
     "lil-gui": "^0.19.2",
     "stats.js": "^0.17.0",
+    "svelte": "4.2.15",
     "three": "^0.164.1",
     "three-bvh-csg": "^0.0.16",
-    "three-custom-shader-material": "^5.4.0"
+    "three-custom-shader-material": "^5.4.0",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.1.1",

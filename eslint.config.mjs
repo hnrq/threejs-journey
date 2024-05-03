@@ -50,7 +50,7 @@ export default tseslint.config(
       //     },
       //   },
       // ],
-      "sort-imports": "error",
+      "@typescript-eslint/triple-slash-reference": "off",
       "no-shadow": "error",
       "no-underscore-dangle": ["error", { "allow": ["__typename"] }],
       "no-unused-vars": [

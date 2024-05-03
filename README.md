@@ -69,6 +69,10 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [52 - Adding details to the scene](https://threejs.hnrq.dev/06-portal-scene/52-adding-details-to-the-scene)
 
 
+### 07 - Threlte
+ - [55 - First threlte application](https://threejs.hnrq.dev/07-threlte/55-first-threlte-application)
+
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
