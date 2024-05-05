@@ -71,6 +71,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
 
 ### 07 - Threlte
  - [55 - First threlte application](https://threejs.hnrq.dev/07-threlte/55-first-threlte-application)
+ - [57 - Debug threlte application](https://threejs.hnrq.dev/07-threlte/57-debug-threlte-application)
 
 
 ## 🧞 Commands
