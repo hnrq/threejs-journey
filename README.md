@@ -73,6 +73,8 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [55 - First threlte application](https://threejs.hnrq.dev/07-threlte/55-first-threlte-application)
  - [57 - Debug threlte application](https://threejs.hnrq.dev/07-threlte/57-debug-threlte-application)
  - [59 - Load models with threlte](https://threejs.hnrq.dev/07-threlte/59-load-models-with-threlte)
+ - [60 - 3d text](https://threejs.hnrq.dev/07-threlte/60-3d-text)
+ - [61 - Portal scene](https://threejs.hnrq.dev/07-threlte/61-portal-scene)
 
 
 ## 🧞 Commands

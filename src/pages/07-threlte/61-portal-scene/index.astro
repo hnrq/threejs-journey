@@ -1,0 +1,21 @@
+---
+import Canvas from './Canvas.svelte';
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout title="61 - Portal Scene">
+  <Canvas client:only="svelte" />
+</Layout>
+
+<style>
+  html,
+  body,
+  #root {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+  }
+</style>
