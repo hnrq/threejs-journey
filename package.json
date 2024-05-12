@@ -22,6 +22,7 @@
     "animejs": "^3.2.2",
     "astro": "^4.7.1",
     "lil-gui": "^0.19.2",
+    "postprocessing": "^6.35.4",
     "stats.js": "^0.17.0",
     "svelte": "4.2.15",
     "svelte-tweakpane-ui": "^1.2.4",
