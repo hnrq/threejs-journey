@@ -28,6 +28,7 @@
     "three": "^0.164.1",
     "three-bvh-csg": "^0.0.16",
     "three-custom-shader-material": "^5.4.0",
+    "three-mesh-bvh": "^0.7.4",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
