@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-import type Rapier from '@dimforge/rapier3d';
+import type Rapier from '@dimforge/rapier3d-compat';
 import * as dat from 'lil-gui';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
@@ -13,7 +13,8 @@ import environmentMaps0PZUrl from '@assets/_environmentMaps/streets/nx.jpg?url';
 
 THREE.ColorManagement.enabled = false;
 
-const RAPIER = await import('@dimforge/rapier3d');
+const RAPIER = await import('@dimforge/rapier3d-compat');
+await RAPIER.init();
 
 /**
  * Debug

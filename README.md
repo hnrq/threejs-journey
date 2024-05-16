@@ -43,6 +43,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [30 - Animated galaxy](https://threejs.hnrq.dev/04-shaders/30-animated-galaxy)
  - [31 - Modified materials](https://threejs.hnrq.dev/04-shaders/31-modified-materials)
  - [32 - Coffee smoke](https://threejs.hnrq.dev/04-shaders/32-coffee-smoke)
+ - [32 - Coffee smoke shader](https://threejs.hnrq.dev/04-shaders/32-coffee-smoke-shader)
  - [33 - Hologram](https://threejs.hnrq.dev/04-shaders/33-hologram)
  - [34 - Fireworks](https://threejs.hnrq.dev/04-shaders/34-fireworks)
  - [35 - Lighting shading](https://threejs.hnrq.dev/04-shaders/35-lighting-shading)
@@ -78,6 +79,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [62 - Mouse events](https://threejs.hnrq.dev/07-threlte/62-mouse-events)
  - [63 - Postprocessing](https://threejs.hnrq.dev/07-threlte/63-postprocessing)
  - [64 - Fun and simple portfolio](https://threejs.hnrq.dev/07-threlte/64-fun-and-simple-portfolio)
+ - [65 - Physics](https://threejs.hnrq.dev/07-threlte/65-physics)
 
 
 ## 🧞 Commands

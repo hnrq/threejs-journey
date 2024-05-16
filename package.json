@@ -15,10 +15,11 @@
   "dependencies": {
     "@astrojs/netlify": "^5.2.0",
     "@astrojs/svelte": "^5.4.0",
-    "@dimforge/rapier3d": "^0.13.0",
+    "@dimforge/rapier3d-compat": "^0.13.1",
     "@fontsource/b612-mono": "^5.0.19",
     "@threlte/core": "^7.3.0",
     "@threlte/extras": "^8.11.2",
+    "@threlte/rapier": "^2.0.0",
     "animejs": "^3.2.2",
     "astro": "^4.7.1",
     "lil-gui": "^0.19.2",
