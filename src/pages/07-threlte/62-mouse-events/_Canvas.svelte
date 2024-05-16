@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Canvas } from '@threlte/core';
-  import Scene from './components/Scene.svelte';
-  import BvhRaycast from './components/BvhRaycast.svelte';
+  import Scene from './_components/Scene.svelte';
+  import BvhRaycast from './_components/BvhRaycast.svelte';
 </script>
 
 <div>
