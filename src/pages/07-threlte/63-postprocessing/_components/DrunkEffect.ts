@@ -35,7 +35,7 @@ export default class DrunkEffect extends Effect {
     });
   }
 
-  update = (renderer: Renderer, inputBuffer: WebGLRenderTarget, deltaTime: number) => {
+  update = (_renderer: Renderer, _inputBuffer: WebGLRenderTarget, deltaTime: number) => {
     (<Uniform>this.uniforms.get('time')).value += deltaTime;
   };
 }

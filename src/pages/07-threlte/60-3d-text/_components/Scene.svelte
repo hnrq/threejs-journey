@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { T, useFrame } from '@threlte/core';
+  import { T, useTask } from '@threlte/core';
   import { OrbitControls, PerfMonitor, Text3DGeometry, useTexture } from '@threlte/extras';
   import { Group, TorusGeometry } from 'three';
 
   const donutGeometry = new TorusGeometry();
   let donutsGroup: Group;
 
-  useFrame((ctx, delta) => {
+  useTask((delta) => {
     donutsGroup?.children.forEach((donut) => {
       donut.rotation.y += delta * 0.2;
     });

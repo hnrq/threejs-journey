@@ -20,6 +20,7 @@
     "@threlte/core": "^7.3.0",
     "@threlte/extras": "^8.11.2",
     "@threlte/rapier": "^2.0.0",
+    "@xstate/svelte": "^3.0.3",
     "animejs": "^3.2.2",
     "astro": "^4.7.1",
     "lil-gui": "^0.19.2",
@@ -31,7 +32,8 @@
     "three-bvh-csg": "^0.0.16",
     "three-custom-shader-material": "^5.4.0",
     "three-mesh-bvh": "^0.7.4",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "xstate": "^5.13.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.2.0",

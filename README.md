@@ -80,6 +80,7 @@ All the classes I've done on Three.JS Journey, but with Astro (and Threlte!)
  - [63 - Postprocessing](https://threejs.hnrq.dev/07-threlte/63-postprocessing)
  - [64 - Fun and simple portfolio](https://threejs.hnrq.dev/07-threlte/64-fun-and-simple-portfolio)
  - [65 - Physics](https://threejs.hnrq.dev/07-threlte/65-physics)
+ - [66 - Create a game](https://threejs.hnrq.dev/07-threlte/66-create-a-game)
 
 
 ## 🧞 Commands

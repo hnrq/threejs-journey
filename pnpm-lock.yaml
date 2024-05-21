@@ -29,6 +29,9 @@ importers:
       '@threlte/rapier':
         specifier: ^2.0.0
         version: 2.0.0(@dimforge/rapier3d-compat@0.13.1)(svelte@4.2.15)(three@0.164.1)
+      '@xstate/svelte':
+        specifier: ^3.0.3
+        version: 3.0.3(svelte@4.2.15)(xstate@5.13.0)
       animejs:
         specifier: ^3.2.2
         version: 3.2.2
@@ -65,6 +68,9 @@ importers:
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
+      xstate:
+        specifier: ^5.13.0
+        version: 5.13.0
     devDependencies:
       '@eslint/js':
         specifier: ^9.2.0
@@ -1034,6 +1040,15 @@ packages:
 
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+
+  '@xstate/svelte@3.0.3':
+    resolution: {integrity: sha512-PS/aFLRyrA+ESt+DsmRqpe7n6Zukcqvl+BEVLpWpGqRMHbymBbPR2RR3RnGF4MlM7YkFbme60obJtS6BYILUrQ==}
+    peerDependencies:
+      svelte: ^3.24.1 || ^4
+      xstate: ^5.11.0
+    peerDependenciesMeta:
+      xstate:
+        optional: true
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -3092,6 +3107,9 @@ packages:
     resolution: {integrity: sha512-G8ura3S+3Z2G+mkgNRq8dqaFZAuxfsxpBB8OCTGRTCtp+l/v9nbFNmCUP1BZMts3G1142MsZfn6eeUKrr4PD1Q==}
     engines: {node: '>=18'}
 
+  xstate@5.13.0:
+    resolution: {integrity: sha512-Z0om784N5u8sAzUvQJBa32jiTCIGGF/2ZsmKkerQEqeeUktAeOMK20FIHFUMywC4GcAkNksSvaeX7lwoRNXPEQ==}
+
   xtend@4.0.2:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
     engines: {node: '>=0.4'}
@@ -3952,6 +3970,12 @@ snapshots:
       eslint-visitor-keys: 3.4.3
 
   '@ungap/structured-clone@1.2.0': {}
+
+  '@xstate/svelte@3.0.3(svelte@4.2.15)(xstate@5.13.0)':
+    dependencies:
+      svelte: 4.2.15
+    optionalDependencies:
+      xstate: 5.13.0
 
   acorn-jsx@5.3.2(acorn@8.11.3):
     dependencies:
@@ -6565,6 +6589,8 @@ snapshots:
       ansi-styles: 6.2.1
       string-width: 7.0.0
       strip-ansi: 7.1.0
+
+  xstate@5.13.0: {}
 
   xtend@4.0.2: {}
 

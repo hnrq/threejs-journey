@@ -1,6 +1,6 @@
 <script>
   import { AdditiveBlending, BufferAttribute, Color, Uniform } from 'three';
-  import { T, useFrame } from '@threlte/core';
+  import { T, useTask } from '@threlte/core';
   import { OrbitControls, useGltf, useTexture } from '@threlte/extras';
   import { Color as PaneColor } from 'svelte-tweakpane-ui';
 
@@ -26,7 +26,7 @@
   let model = useGltf(modelUrl);
   let time = 0;
 
-  useFrame((_ctx, delta) => {
+  useTask((delta) => {
     time += delta;
   });
 </script>

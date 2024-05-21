@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { T, useFrame } from '@threlte/core';
+  import { T, useTask } from '@threlte/core';
   import { GLTF, OrbitControls, PerfMonitor, interactivity } from '@threlte/extras';
   import { Mesh, MeshStandardMaterial } from 'three';
   import hamburgerModelUrl from '@assets/_models/Hamburger.glb?url';
@@ -9,7 +9,7 @@
 
   let cube: Mesh;
 
-  useFrame((_ctx, delta) => {
+  useTask((delta) => {
     if (cube) cube.rotation.y += delta * 0.2;
   });
 
