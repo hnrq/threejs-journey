@@ -4,12 +4,12 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import anime from 'animejs';
 
 import flightHelmetModelUrl from './_models/FlightHelmet/FlightHelmet.gltf?url';
-import environmentMapNXUrl from '@assets/_environmentMaps/streets/nx.jpg?url';
-import environmentMapNYUrl from '@assets/_environmentMaps/streets/ny.jpg?url';
-import environmentMapNZUrl from '@assets/_environmentMaps/streets/nz.jpg?url';
-import environmentMapPXUrl from '@assets/_environmentMaps/streets/px.jpg?url';
-import environmentMapPYUrl from '@assets/_environmentMaps/streets/py.jpg?url';
-import environmentMapPZUrl from '@assets/_environmentMaps/streets/pz.jpg?url';
+import environmentMapNXUrl from '@assets/environmentMaps/streets/nx.jpg?url';
+import environmentMapNYUrl from '@assets/environmentMaps/streets/ny.jpg?url';
+import environmentMapNZUrl from '@assets/environmentMaps/streets/nz.jpg?url';
+import environmentMapPXUrl from '@assets/environmentMaps/streets/px.jpg?url';
+import environmentMapPYUrl from '@assets/environmentMaps/streets/py.jpg?url';
+import environmentMapPZUrl from '@assets/environmentMaps/streets/pz.jpg?url';
 
 /**
  * Base

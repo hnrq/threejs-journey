@@ -4,7 +4,7 @@
   import Player from './Player.svelte';
   import Level from './level/Level.svelte';
   import { getContext } from 'svelte';
-  import type { GameContext } from './context/GameContext.svelte';
+  import type { GameContext } from '../_context/GameContext.svelte';
 
   const { snapshot } = getContext<GameContext>('game');
 </script>

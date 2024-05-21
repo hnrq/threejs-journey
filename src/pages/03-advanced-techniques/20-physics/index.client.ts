@@ -4,12 +4,12 @@ import type Rapier from '@dimforge/rapier3d-compat';
 import * as dat from 'lil-gui';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import environmentMaps0NXUrl from '@assets/_environmentMaps/streets/nx.jpg?url';
-import environmentMaps0NYUrl from '@assets/_environmentMaps/streets/nx.jpg?url';
-import environmentMaps0NZUrl from '@assets/_environmentMaps/streets/nx.jpg?url';
-import environmentMaps0PXUrl from '@assets/_environmentMaps/streets/nx.jpg?url';
-import environmentMaps0PYUrl from '@assets/_environmentMaps/streets/nx.jpg?url';
-import environmentMaps0PZUrl from '@assets/_environmentMaps/streets/nx.jpg?url';
+import environmentMaps0NXUrl from '@assets/environmentMaps/streets/nx.jpg?url';
+import environmentMaps0NYUrl from '@assets/environmentMaps/streets/nx.jpg?url';
+import environmentMaps0NZUrl from '@assets/environmentMaps/streets/nx.jpg?url';
+import environmentMaps0PXUrl from '@assets/environmentMaps/streets/nx.jpg?url';
+import environmentMaps0PYUrl from '@assets/environmentMaps/streets/nx.jpg?url';
+import environmentMaps0PZUrl from '@assets/environmentMaps/streets/nx.jpg?url';
 
 THREE.ColorManagement.enabled = false;
 

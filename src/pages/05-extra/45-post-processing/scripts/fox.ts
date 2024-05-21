@@ -3,7 +3,7 @@ import type * as THREE from 'three';
 import type { GLTFLoader } from 'three/examples/jsm/Addons.js';
 import CrossfadeMixer from './CrossfadeMixer';
 import type GUI from 'lil-gui';
-import FoxModel from '@assets/_models/Fox.glb?url';
+import FoxModel from '@assets/models/Fox.glb?url';
 
 const load = async (gltfLoader: GLTFLoader, gui: GUI) => {
   // Actions

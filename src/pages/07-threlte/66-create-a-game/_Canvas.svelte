@@ -4,8 +4,8 @@
   import { World } from '@threlte/rapier';
   import { HTML } from '@threlte/extras';
   import Interface from './_components/Interface.svelte';
-  import KeyboardContext from './_components/context/KeyboardContext.svelte';
-  import GameContext from './_components/context/GameContext.svelte';
+  import KeyboardContext from './_context/KeyboardContext.svelte';
+  import GameContext from './_context/GameContext.svelte';
 </script>
 
 <div>

@@ -4,6 +4,7 @@
   import { Clock, Euler, Quaternion } from 'three';
   import { boxGeometry, floor2Material, obstacleMaterial } from './Level.svelte';
   import { RigidBody, AutoColliders } from '@threlte/rapier';
+  import playHitSound from '../../_utils/hitAudio';
 
   const speed = (Math.random() + 0.2) * (Math.random() < 0.5 ? -1 : 1);
   const clock = new Clock();
@@ -29,7 +30,7 @@
 
   <T.Group position.y={0.3}>
     <RigidBody bind:rigidBody type="kinematicPosition">
-      <AutoColliders restitution={0.2} friction={0} shape="cuboid">
+      <AutoColliders restitution={0.2} friction={0} shape="cuboid" on:contact={playHitSound}>
         <T.Mesh
           geometry={boxGeometry}
           scale={[3.5, 0.3, 0.3]}

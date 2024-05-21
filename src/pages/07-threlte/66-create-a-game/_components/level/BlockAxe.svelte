@@ -1,9 +1,10 @@
 <script lang="ts">
   import type RAPIER from '@dimforge/rapier3d-compat';
-  import { useTask, T, useThrelte } from '@threlte/core';
+  import { useTask, T } from '@threlte/core';
   import { boxGeometry, floor2Material, obstacleMaterial } from './Level.svelte';
   import { RigidBody, AutoColliders } from '@threlte/rapier';
   import { Clock } from 'three';
+  import playHitSound from '../../_utils/hitAudio';
 
   const timeOffset = Math.random() * Math.PI * 2;
 
@@ -13,11 +14,12 @@
 
   useTask(() => {
     const x = Math.sin(clock.getElapsedTime() + timeOffset) * 1.25;
-    rigidBody.setNextKinematicTranslation({
-      x: position[0] + x,
-      y: position[1] + 0.75,
-      z: position[2],
-    });
+    if (rigidBody)
+      rigidBody.setNextKinematicTranslation({
+        x: position[0] + x,
+        y: position[1] + 0.75,
+        z: position[2],
+      });
   });
 </script>
 
@@ -30,7 +32,7 @@
     receiveShadow
   />
   <T.Group position.y={0.3}>
-    <RigidBody bind:rigidBody type="kinematicPosition">
+    <RigidBody bind:rigidBody type="kinematicPosition" on:contact={playHitSound}>
       <AutoColliders restitution={0.2} friction={0} shape="cuboid">
         <T.Mesh
           geometry={boxGeometry}

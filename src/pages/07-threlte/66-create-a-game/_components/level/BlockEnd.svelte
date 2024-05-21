@@ -1,6 +1,6 @@
 <script lang="ts">
   import { GLTF, Text } from '@threlte/extras';
-  import hamburgerModelUrl from '@assets/_models/Hamburger.glb?url';
+  import hamburgerModelUrl from '@assets/models/Hamburger.glb?url';
   import { AutoColliders, RigidBody } from '@threlte/rapier';
   import { T } from '@threlte/core';
   import { boxGeometry, floor1Material } from './Level.svelte';
@@ -22,15 +22,8 @@
   />
   <T.Group position.y={0.25}>
     <RigidBody type="fixed">
-      <AutoColliders shape="convexHull">
-        <GLTF
-          url={hamburgerModelUrl}
-          scale={0.2}
-          restitution={0.2}
-          friction={0}
-          useDraco
-          castShadow
-        />
+      <AutoColliders shape="convexHull" restitution={0.2} friction={0}>
+        <GLTF url={hamburgerModelUrl} scale={0.2} useDraco castShadow />
       </AutoColliders>
     </RigidBody>
   </T.Group>

@@ -2,7 +2,7 @@
   import { T, useTask } from '@threlte/core';
   import { GLTF, OrbitControls, PerfMonitor, interactivity } from '@threlte/extras';
   import { Mesh, MeshStandardMaterial } from 'three';
-  import hamburgerModelUrl from '@assets/_models/Hamburger.glb?url';
+  import hamburgerModelUrl from '@assets/models/Hamburger.glb?url';
   import type { ThrelteEvents } from 'node_modules/@threlte/extras/dist/interactivity/types';
 
   interactivity();

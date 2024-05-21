@@ -1,26 +1,23 @@
 <script lang="ts">
   import { getContext, onDestroy } from 'svelte';
-  import type { GameContext } from './context/GameContext.svelte';
-  import KeyboardContext from './context/KeyboardContext.svelte';
+  import type { GameContext } from '../_context/GameContext.svelte';
+  import KeyboardContext from '../_context/KeyboardContext.svelte';
 
   const { snapshot, send } = getContext<GameContext>('game');
   const { activeKeys } = getContext<KeyboardContext>('keyboard');
 
   let time = 0;
-  const timeout = setInterval(() => {
+  const timer = () => {
     time += 1;
-  }, 1);
+  };
+  let interval: number;
 
-  $: if ($snapshot.matches('ended')) {
-    clearInterval(timeout);
-  }
-
-  $: if ($snapshot.matches('ready')) {
-    time = 0;
-  }
+  $: if ($snapshot.matches('playing')) interval = setInterval(timer, 1);
+  $: if ($snapshot.matches('ended')) clearInterval(interval);
+  $: if ($snapshot.matches('ready')) time = 0;
 
   onDestroy(() => {
-    clearInterval(timeout);
+    clearInterval(interval);
   });
 </script>
 

@@ -4,7 +4,7 @@ import { GUI } from 'lil-gui';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-import suzanneModel from '@assets/_models/suzanne.glb?url';
+import suzanneModel from '@assets/models/suzanne.glb?url';
 
 import fragmentShader from './_shaders/fragment.glsl';
 import vertexShader from './_shaders/vertex.glsl';

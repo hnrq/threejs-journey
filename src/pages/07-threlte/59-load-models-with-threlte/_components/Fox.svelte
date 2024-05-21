@@ -1,7 +1,7 @@
 <script lang="ts">
   import { GLTF, useGltfAnimations } from '@threlte/extras';
   import { Button, Pane } from 'svelte-tweakpane-ui';
-  import modelUrl from '@assets/_models/Fox.glb?url';
+  import modelUrl from '@assets/models/Fox.glb?url';
   import { type ComponentProps } from 'svelte';
 
   type $$Props = Omit<ComponentProps<GLTF>, 'url'>;

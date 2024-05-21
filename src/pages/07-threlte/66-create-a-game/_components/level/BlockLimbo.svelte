@@ -4,6 +4,7 @@
   import { T, useTask } from '@threlte/core';
   import { boxGeometry, floor2Material, obstacleMaterial } from './Level.svelte';
   import { Clock } from 'three';
+  import playHitSound from '../../_utils/hitAudio';
 
   const timeOffset = Math.random() * Math.PI * 2;
   const clock = new Clock();
@@ -27,7 +28,7 @@
     receiveShadow
   />
   <T.Group position.y={0.3}>
-    <RigidBody bind:rigidBody type="kinematicPosition">
+    <RigidBody bind:rigidBody type="kinematicPosition" on:contact={playHitSound}>
       <AutoColliders restitution={0.2} friction={0} shape="cuboid">
         <T.Mesh
           geometry={boxGeometry}

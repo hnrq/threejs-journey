@@ -5,18 +5,29 @@
   import { Vector3 } from 'three';
   import { T, useTask, useThrelte } from '@threlte/core';
   import { getContext } from 'svelte';
-  import type { GameContext } from './context/GameContext.svelte';
+  import type { GameContext } from '../_context/GameContext.svelte';
+  import popAudioUrl from '@assets/audio/pop.mp3';
+  import finishAudioUrl from '@assets/audio/ta-da.mp3';
 
   const { activeKeys } = getContext<{ activeKeys: SvelteStore<Set<string>> }>('keyboard');
   const { snapshot, send } = getContext<GameContext>('game');
 
-  $: $activeKeys.size > 0, send({ type: 'START' });
+  $: if ($activeKeys.size > 0) send({ type: 'START' });
 
   let rigidBody: RAPIER.RigidBody;
   let smoothedCameraPosition = new Vector3(10, 10, 10);
   let smoothedCameraTarget = new Vector3();
 
   const { rapier, world } = useRapier();
+
+  const finishSound = new Audio(finishAudioUrl);
+  finishSound.volume = 0.5;
+
+  const popSound = new Audio(popAudioUrl);
+
+  const firePopSound = () => {
+    popSound.play();
+  };
 
   const jump = () => {
     const origin = rigidBody.translation();
@@ -98,14 +109,23 @@
     /**
      * Phases
      */
-    if (bodyPosition.z < -($snapshot.context.blocksCount * 4 + 2)) send({ type: 'END' });
+    if (bodyPosition.z < -($snapshot.context.blocksCount * 4 + 2)) {
+      if (!$snapshot.matches('ended')) finishSound.play();
+      send({ type: 'END' });
+    }
 
     if (bodyPosition.y < -4) send({ type: 'RESTART' });
   });
 </script>
 
 <T.Group position={[0, 1, 0]}>
-  <RigidBody bind:rigidBody canSleep={false} linearDamping={0.5} angularDamping={0.5}>
+  <RigidBody
+    bind:rigidBody
+    canSleep={false}
+    linearDamping={0.5}
+    angularDamping={0.5}
+    on:create={firePopSound}
+  >
     <AutoColliders shape="ball" restitution={0.2} friction={1}>
       <T.Mesh castShadow>
         <T.IcosahedronGeometry args={[0.3, 1]} />

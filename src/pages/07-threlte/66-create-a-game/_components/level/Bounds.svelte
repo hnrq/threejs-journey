@@ -2,12 +2,13 @@
   import { boxGeometry, wallMaterial } from './Level.svelte';
   import { T } from '@threlte/core';
   import { RigidBody, AutoColliders, Collider } from '@threlte/rapier';
+  import playHitSound from '../../_utils/hitAudio';
 
   export let length = 1;
 </script>
 
 <RigidBody type="fixed">
-  <AutoColliders restitution={0.2} friction={0} shape="cuboid">
+  <AutoColliders restitution={0.2} friction={0} shape="cuboid" on:contact={playHitSound}>
     <T.Mesh
       position={[2.15, 0.75, -(length * 2) + 2]}
       geometry={boxGeometry}
@@ -31,6 +32,12 @@
     />
   </AutoColliders>
   <T.Group position={[0, -0.1, -(length * 2) + 2]}>
-    <Collider shape="cuboid" args={[2, 0.1, 2 * length]} restitution={0.2} friction={1} />
+    <Collider
+      shape="cuboid"
+      args={[2, 0.1, 2 * length]}
+      restitution={0.2}
+      friction={1}
+      on:contact={playHitSound}
+    />
   </T.Group>
 </RigidBody>

@@ -6,12 +6,12 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import leePerrySmithColor from './_models/color.jpg?url';
 import leePerrySmithModel from './_models/LeePerrySmith.glb?url';
 import leePerrySmithNormal from './_models/normal.jpg?url';
-import environmentMapNX from '@assets/_environmentMaps/streets/nx.jpg?url';
-import environmentMapNY from '@assets/_environmentMaps/streets/ny.jpg?url';
-import environmentMapNZ from '@assets/_environmentMaps/streets/nz.jpg?url';
-import environmentMapPX from '@assets/_environmentMaps/streets/px.jpg?url';
-import environmentMapPY from '@assets/_environmentMaps/streets/py.jpg?url';
-import environmentMapPZ from '@assets/_environmentMaps/streets/pz.jpg?url';
+import environmentMapNX from '@assets/environmentMaps/streets/nx.jpg?url';
+import environmentMapNY from '@assets/environmentMaps/streets/ny.jpg?url';
+import environmentMapNZ from '@assets/environmentMaps/streets/nz.jpg?url';
+import environmentMapPX from '@assets/environmentMaps/streets/px.jpg?url';
+import environmentMapPY from '@assets/environmentMaps/streets/py.jpg?url';
+import environmentMapPZ from '@assets/environmentMaps/streets/pz.jpg?url';
 
 /**
  * Base

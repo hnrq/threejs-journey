@@ -9,8 +9,8 @@
   import { PositionalAudio } from '@threlte/extras';
   import { Collider, RigidBody, type ContactEvent } from '@threlte/rapier';
   import type * as RAPIER from '@dimforge/rapier3d-compat';
-  import hitAudioUrl from '../_audio/hit.mp3';
-  import popAudioUrl from '../_audio/pop.mp3';
+  import hitAudioUrl from '@assets/audio/hit.mp3';
+  import popAudioUrl from '@assets/audio/pop.mp3';
   import { BoxGeometry, Color, Euler, MeshToonMaterial, Vector3 } from 'three';
   import { clamp } from 'three/src/math/MathUtils.js';
   import { writable } from 'svelte/store';
